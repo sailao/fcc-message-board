@@ -1,0 +1,45 @@
+@host = http://localhost:3000
+
+
+###
+POST {{host}}/api/threads/my board
+Content-Type: application/json
+
+{
+    "text": "my thread",
+    "delete_password": "my password"
+}
+
+###
+GET {{host}}/api/threads/my board
+
+###
+DELETE {{host}}/api/threads/my board
+Content-Type: application/json
+
+{
+    "thread_id": "60aa47ecf532de55272755a1",
+    "delete_password": "hi"
+}
+
+###
+GET {{host}}/api/replies/my board?thread_id=60abd40015291b428b8ffc23
+
+###
+PUT {{host}}/api/threads/my board
+Content-Type: application/json
+
+{
+    "report_id": "60abcd90e4789135ab104b7c"
+    //"report_id": "60abc8aae4789135ab104b79"
+}
+
+###
+POST {{host}}/api/replies/my board
+Content-Type: application/json
+
+{
+    "thread_id": "60abd2269a6d403ee6ddf5b3",
+    "text": "my reply",
+    "delete_password": "my password"
+}
